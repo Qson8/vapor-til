@@ -6,6 +6,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     /// Register providers first
     try services.register(FluentSQLiteProvider())
 
+    /// 配置ip端口
+    services.register(NIOServerConfig.default(hostname: "127.0.0.1", port: 8080))
+    
     /// Register routes to the router
     let router = EngineRouter.default()
     try routes(router)
@@ -27,7 +30,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 
     /// Configure migrations
     var migrations = MigrationConfig()
-    migrations.add(model: Todo.self, database: .sqlite)
+    migrations.add(model: Acronym.self, database: .sqlite)
     services.register(migrations)
 
 }
