@@ -20,7 +20,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     // Configure a SQLite database
 //    let sqlite = try SQLiteDatabase(storage: .memory)
 //    let sqlite = try SQLiteDatabase(storage: .file(path: "/Users/qson/Desktop/db.sqlite"))
-    let sqlite = try SQLiteDatabase(storage: .file(path: "/db.sqlite"))
+    let sqlite = try SQLiteDatabase(storage: .file(path: "TILApp/Public/db.sqlite"))
     
     print(sqlite.storage)
 
@@ -37,5 +37,6 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     /// 配置ip端口
 //    services.register(NIOServerConfig.default(hostname: "127.0.0.1", port: 8080))
     services.register(NIOServerConfig.default(hostname: "0.0.0.0", port: 8080))
+    // 访问 172.27.0.16:8080
 
 }
