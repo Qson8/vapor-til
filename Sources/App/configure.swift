@@ -18,9 +18,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(middlewares)
 
     // Configure a SQLite database
-//    let sqlite = try SQLiteDatabase(storage: .memory)
+    let sqlite = try SQLiteDatabase(storage: .memory)
 //    let sqlite = try SQLiteDatabase(storage: .file(path: "/Users/qson/Desktop/db.sqlite"))
-    let sqlite = try SQLiteDatabase(storage: .file(path: "TILApp/Public/db.sqlite"))
+//    let sqlite = try SQLiteDatabase(storage: .file(path: "TILApp/Public/db.sqlite"))
     
     print(sqlite.storage)
 
